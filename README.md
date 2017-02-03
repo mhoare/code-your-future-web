@@ -1,7 +1,7 @@
 # Code Yor Future
 ---
 
-[![CircleCI](https://circleci.com/gh/apmaros/code-your-future-web/tree/master.svg?style=svg&circle-token=b43e2591c0bb4c09883aa92396ed557616245dd0)](https://circleci.com/gh/apmaros/code-your-future-web/tree/master)
+[![CircleCI](https://circleci.com/gh/Code-Your-Future/code-your-future-web/tree/master.svg?style=svg&circle-token=b43e2591c0bb4c09883aa92396ed557616245dd0)](https://circleci.com/gh/Code-Your-Future/code-your-future-web/tree/master)
 
 ## Requirements
 
