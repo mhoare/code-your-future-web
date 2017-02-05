@@ -14,7 +14,7 @@ deployment:
     commands:
       - npm install
       - gulp rebuild
-      - aws s3 sync build s3://demo-codeyourfuture --delete
+      - ./deploy.sh demo
   staging:
     branch: staging
     commands:
