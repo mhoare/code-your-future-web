@@ -20,6 +20,9 @@ else
 	exit 1
 fi
 
+## Some weird github pages requirement
+echo "$BRANCH.codeyourfuture.co" > ./build/CNAME
+##
 git clone git@github.com:Code-Your-Future/$REPO_NAME.git
 cd $REPO_NAME
 git rm *
