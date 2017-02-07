@@ -9,9 +9,11 @@
 
 ## Setup
 
-- npm install
-- gulp rebuild # to build index to ./build folder
-- gulp watch # automatically rebuild when source is modified
+```bash
+$ npm install
+$ gulp rebuild # to build index to ./build folder
+$ gulp watch # automatically rebuild when source is modified
+```
 
 ## Present
 
