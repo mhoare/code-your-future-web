@@ -1,7 +1,7 @@
 # Code Yor Future
 ---
 
-[![CircleCI](https://circleci.com/gh/apmaros/code-your-future-web/tree/master.svg?style=svg&circle-token=b43e2591c0bb4c09883aa92396ed557616245dd0)](https://circleci.com/gh/apmaros/code-your-future-web/tree/master)
+[![CircleCI](https://circleci.com/gh/Code-Your-Future/code-your-future-web/tree/master.svg?style=svg&circle-token=b43e2591c0bb4c09883aa92396ed557616245dd0)](https://circleci.com/gh/Code-Your-Future/code-your-future-web/tree/master)
 
 ## Requirements
 
@@ -9,17 +9,19 @@
 
 ## Setup
 
-- npm install
-- gulp rebuild # to build index to ./build folder
-- gulp watch # automatically rebuild when source is modified
+```bash
+$ npm install
+$ gulp rebuild # to build index to ./build folder
+$ gulp watch # automatically rebuild when source is modified
+```
 
 ## Present
 
-To present merge your changes to `demo` branch. CI build deploy it to S3 on URL:
-- [demo-codeyourfuture.s3-website-us-west-2.amazonaws.com](http://demo-codeyourfuture.s3-website-us-west-2.amazonaws.com)
+To present merge your changes to `demo` branch. CI will build and then deploy it to GitHub pages (check web-static-[demo,staging,production] repos):
+- [demo.codeyourfuture.co](http://demo.codeyourfuture.co)
 
 Currently, there is only one release candidate branch `staging` accessible on:
-- [staging-codeyourfuture.s3-website-us-west-2.amazonaws.com](http://staging-codeyourfuture.s3-website-us-west-2.amazonaws.com)
+- [staging.codeyourfuture.co](http://staging.codeyourfuture.co)
 
 ## Contribute
 
