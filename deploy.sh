@@ -21,7 +21,7 @@ else
 fi
 
 ## Some weird github pages requirement
-if [ $BRANCH -eq "production" ]; then
+if [ $BRANCH == "production" ]; then
 	echo "codeyourfuture.co" > ./build/CNAME
 else
 	echo "$BRANCH.codeyourfuture.co" > ./build/CNAME
