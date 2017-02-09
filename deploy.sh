@@ -21,7 +21,11 @@ else
 fi
 
 ## Some weird github pages requirement
-echo "$BRANCH.codeyourfuture.co" > ./build/CNAME
+if [ $BRANCH -eq "production" ]; then
+	echo "codeyourfuture.co" > ./build/CNAME
+else
+	echo "$BRANCH.codeyourfuture.co" > ./build/CNAME
+fi
 ##
 git clone git@github.com:Code-Your-Future/$REPO_NAME.git
 cd $REPO_NAME
