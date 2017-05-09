@@ -45,3 +45,5 @@ To contribute please follow instructions:
 - move task fro in `Review` to `Done`
 
 Thank you.
+
+Minor change to the README to test.
