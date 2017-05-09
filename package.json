@@ -2,7 +2,7 @@
   "name": "code-your-future-web",
   "version": "1.0.0",
   "description": "---",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,8 @@
     "gulp-sass": "^2.3.2",
     "handlebars-layouts": "^3.1.4",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
   }
 }
