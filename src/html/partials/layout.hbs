@@ -7,6 +7,81 @@
       <meta name="description" content="We are a non-profit organisation supporting refugees with the dream of becoming developers.">
       <title>Code Your Future</title>
 
+      <!-- Firebase Script -->
+      <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAISJwIvlQiu1vO1g3k6WNh_mWv-OwRyBo",
+          authDomain: "code-your-future-web-352aa.firebaseapp.com",
+          databaseURL: "https://code-your-future-web-352aa.firebaseio.com",
+          projectId: "code-your-future-web-352aa",
+          storageBucket: "code-your-future-web-352aa.appspot.com",
+          messagingSenderId: "151705779052"
+        };
+        firebase.initializeApp(config);
+      </script>
+
+
+      <!-- Firebase UI -->
+      <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+      <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
+      <script type="text/javascript">
+        // FirebaseUI config.
+        var uiConfig = {
+          signInSuccessUrl: 'http://localhost:5000/index.html',
+          signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          ]
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+      </script>
+
+      <script type="text/javascript">
+            initApp = function() {
+              firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                  // User is signed in.
+                  var displayName = user.displayName;
+                  var email = user.email;
+                  var emailVerified = user.emailVerified;
+                  var photoURL = user.photoURL;
+                  var uid = user.uid;
+                  var providerData = user.providerData;
+                  user.getToken().then(function(accessToken) {
+                    document.getElementById('sign-in-status').textContent = 'Signed in';
+                    document.getElementById('sign-in').textContent = 'Sign out';
+                    document.getElementById('account-details').textContent = JSON.stringify({
+                      displayName: displayName,
+                      email: email,
+                      emailVerified: emailVerified,
+                      photoURL: photoURL,
+                      uid: uid,
+                      accessToken: accessToken,
+                      providerData: providerData
+                    }, null, '  ');
+                  });
+                } else {
+                  // User is signed out.
+                  document.getElementById('sign-in-status').textContent = 'Signed out';
+                  document.getElementById('sign-in').textContent = 'Sign in';
+                  document.getElementById('account-details').textContent = 'null';
+                }
+              }, function(error) {
+                console.log(error);
+              });
+            };
+
+            window.addEventListener('load', function() {
+              initApp()
+            });
+          </script>
+
       <!-- Analytics -->
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -46,21 +121,6 @@
       {{#block "main"}}{{/block}}
 
       {{>footer}}
-
-      <!-- Firebase Script -->
-      <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-      <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyAISJwIvlQiu1vO1g3k6WNh_mWv-OwRyBo",
-          authDomain: "code-your-future-web-352aa.firebaseapp.com",
-          databaseURL: "https://code-your-future-web-352aa.firebaseio.com",
-          projectId: "code-your-future-web-352aa",
-          storageBucket: "code-your-future-web-352aa.appspot.com",
-          messagingSenderId: "151705779052"
-        };
-        firebase.initializeApp(config);
-      </script>
 
       <script src="js/jquery-3.1.1.min.js"></script>
       <script src="js/jquery.backstretch.min.js"></script>
