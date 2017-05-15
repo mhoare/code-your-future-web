@@ -47,6 +47,21 @@
 
       {{>footer}}
 
+      <!-- Firebase Script -->
+      <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAISJwIvlQiu1vO1g3k6WNh_mWv-OwRyBo",
+          authDomain: "code-your-future-web-352aa.firebaseapp.com",
+          databaseURL: "https://code-your-future-web-352aa.firebaseio.com",
+          projectId: "code-your-future-web-352aa",
+          storageBucket: "code-your-future-web-352aa.appspot.com",
+          messagingSenderId: "151705779052"
+        };
+        firebase.initializeApp(config);
+      </script>
+
       <script src="js/jquery-3.1.1.min.js"></script>
       <script src="js/jquery.backstretch.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
