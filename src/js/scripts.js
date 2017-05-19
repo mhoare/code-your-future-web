@@ -14,6 +14,11 @@ jQuery(document).ready(function() {
   $('a.scroll').on('click', function(e) {
     target = this.hash;
     e.preventDefault();
+    // if current page doesn't contain element
+    if ($(this.hash).length == 0)
+    {
+	window.location.href = this.pathname;
+    }
     // animate
     $('html, body').animate({
       scrollTop: $(this.hash).offset().top - 57
