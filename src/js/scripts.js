@@ -15,13 +15,13 @@ jQuery(document).ready(function() {
     target = this.hash;
     e.preventDefault();
     // if current page doesn't contain element
-    if ($(this.hash).length == 0)
+    if ($(target).length == 0)
     {
-	window.location.href = this.pathname;
+	window.location.href = this.pathname + target;
     }
     // animate
     $('html, body').animate({
-      scrollTop: $(this.hash).offset().top - 57
+      scrollTop: $(target).offset().top - 57
     }, 1000, function() {
       // when done, add hash to url
       // (default click behaviour)
